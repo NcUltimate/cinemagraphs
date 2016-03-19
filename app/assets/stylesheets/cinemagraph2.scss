@@ -1,0 +1,12 @@
+#cinemagraph2 {
+  background: url(asset-path('cinemagraph2.jpg'));
+  background-size: cover;
+  background-color: cyan;
+
+  .snowflake {
+    // opacity: 0.5;
+  }
+  + h3 {
+    margin-left: -40px;
+  }
+}

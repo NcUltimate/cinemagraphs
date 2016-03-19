@@ -1,0 +1,9 @@
+#cinemagraph3 {
+  background: url(asset-path('cinemagraph3.jpg'));
+  background-size: cover;
+  background-color: black;
+
+  + h3 {
+    margin-left: -30px;
+  }
+}

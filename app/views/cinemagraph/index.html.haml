@@ -1,0 +1,32 @@
+.content
+  .card
+    %svg#cinemagraph1
+      %radialGradient#firefly_light{ cx: '50%', cy: '50%', fx: '50%', fy: '50%', r: '50%'}
+        %stop{ offset: '0%', 'stop-color' => 'rgb(255,255,195)', 'stop-opacity' => '1'}
+        %stop{ offset: '100%', :style => 'stop-color: rgb(255,255,155);stop-opacity:0;'}
+
+      %radialGradient#sunbeam{ cx: '40%', cy: '50%', fx: '10%', fy: '20%', r: '50%'}
+        %stop{ offset: '0%', 'stop-color' => 'rgb(255,255,215)', 'stop-opacity' => '0.8'}
+        %stop{ offset: '100%', 'stop-color' => 'rgb(255,255,175)', 'stop-opacity' => '0'}
+
+      %radialGradient#ambient_glow{ cx: '50%', cy: '50%', fx: '55%', fy: '35%', r: '50%'}
+        %stop{ offset: '0%', 'stop-color' => 'rgb(255,255,215)', 'stop-opacity' => '1'}
+        %stop{ offset: '30%', 'stop-color' => 'rgb(255,255,215)', 'stop-opacity' => '0.5'}
+        %stop{ offset: '100%', 'stop-color' => 'rgb(255,255,175)', 'stop-opacity' => '0'}
+
+      %radialGradient#darkness{ cx: '50%', cy: '50%', fx: '50%', fy: '50%', r: '50%'}
+        %stop{ offset: '0%', 'stop-color' => 'rgb(0,0,20)', 'stop-opacity' => '0.8'}
+        %stop{ offset: '100%', 'stop-color' => 'rgb(0,0,20)', 'stop-opacity' => '0.2'}
+
+      %polygon#sunray{ fill: 'url(#sunbeam)', opacity: '1', :points => '175,80 180,80 225,250 175,250'}
+      %ellipse#sunspot{ cx: '200', cy: '230', fill: 'url(#firefly_light)', opacity: '0.3', rx: '45', ry: '30'}
+      %ellipse#nighttime{ cx: '50%', cy: '50%', fill: 'url(#darkness)', opacity: '1', rx: '100%', ry: '100%'}
+      %ellipse#ambient{ cx: '20%', cy: '50%', fill: 'url(#ambient_glow)', opacity: '0.4', rx: '100%', ry: '50%'}
+      
+    %h3 Forest
+  .card
+    %svg#cinemagraph3
+    %h3 City
+  .card
+    %svg#cinemagraph2
+    %h3 Mountain

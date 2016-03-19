@@ -1,0 +1,23 @@
+#cinemagraph1 {
+  background: url(asset-path('cinemagraph1.jpg'));
+  background-size: auto 100%;
+
+  .firefly {
+    animation: glow 2s ease-in-out infinite;
+  }
+  + h3 {
+    margin-left: -45px;
+  }
+}
+
+@keyframes glow {
+  0% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
