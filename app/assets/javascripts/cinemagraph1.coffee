@@ -31,8 +31,9 @@ Cinemagraph1 = {
     this.initAmbience($fireflies)
   ,
   initAmbience: ($fireflies)->
+    period = 12
     t1 = new TimelineMax({repeat: -1})
-    t1.from($('#sunray, #sunspot, #ambient'), 20, {
+    t1.from($('#sunray, #sunspot, #ambient'), period, {
       repeat: -1,
       yoyo: true,
       ease: Linear.easeNone,
@@ -40,25 +41,25 @@ Cinemagraph1 = {
       delay: 0
     })
     t2 = new TimelineMax({repeat: -1})
-    t2.to($('#nighttime'), 20, {
+    t2.to($('#nighttime'), period, {
       repeat: -1,
       yoyo: true,
       ease: Linear.easeNone,
       opacity: 0
     })
     t3 = new TimelineMax({repeat: -1})
-    t3.to($fireflies, 5, {
+    t3.to($fireflies, period/4, {
       ease: Linear.easeNone,
       scale: 0,
-      delay: 10
+      delay: period/2
     })
-    t3.to('', 5, {})
-    t3.to($fireflies, 5, {
+    t3.to('', period/4, {})
+    t3.to($fireflies, period/4, {
       ease: Linear.easeNone,
       scale: 1,
-      delay: 10
+      delay: period/2
     })
-    t3.to('', 5, {})
+    t3.to('', period/4, {})
   ,
   addFireflies: ->
     data = [];

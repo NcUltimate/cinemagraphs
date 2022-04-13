@@ -10,11 +10,14 @@ Cinemagraph2 = {
     w = $(this.svgId).parent().width()
     h = $(this.svgId).parent().height()
     this.addSnowFlakes(250, w, h)
-    this.addSmoke(8)
+    this.addSmoke(5)
 
     t1 = new TimelineMax({repeat: -1})
-    t1.addCallback(this.updateSnowFlakes, 0.3, [this])
-    t1.addCallback(this.updateSmoke, 0.3, [this])
+    t1.addCallback(this.updateAll, 0.3, [this])
+  ,
+  updateAll: (cinemagraph2)->
+    cinemagraph2.updateSnowFlakes(cinemagraph2)
+    cinemagraph2.updateSmoke(cinemagraph2)
   ,
   updateSnowFlakes: (cinemagraph2)->
     w = $(cinemagraph2.svgId).parent().width()
@@ -27,7 +30,7 @@ Cinemagraph2 = {
   updateSmoke: (cinemagraph2)->
     w = $(cinemagraph2.svgId).parent().width()
     top = cinemagraph2.svg[0][0].getBoundingClientRect().top
-    cinemagraph2.addSmoke(8)
+    cinemagraph2.addSmoke(5)
 
     $.each d3.selectAll('.smoke')[0], (idx, s) ->
       $(s).remove() if $(s).css('opacity') == '0'
